@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo.Views.Home"
+             xmlns:models ="clr-namespace:Demo.Models"
+             xmlns:viewmodel="clr-namespace:Demo.ViewModels"
+             x:DataType="viewmodel:HomeViewModel"
+             Title="Home">
+
+    <CollectionView ItemsSource="{Binding Users}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:User">
+                <Frame BorderColor="#eee" Margin="5,5,5,0">
+                    <Label Text="{Binding Name}"></Label>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodel:HomeViewModel}}, Path= UserTappedCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

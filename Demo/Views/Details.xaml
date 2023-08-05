@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Demo.Views.Details"
+             xmlns:viewmodel="clr-namespace:Demo.ViewModels"
+             x:DataType="viewmodel:DetailsViewModel"
+             Title="Details">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Command="{Binding GoHomeCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Text="ID: "></Label>
+            <Label Text="{Binding User.Id}"></Label>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="NAME: "></Label>
+            <Label Text="{Binding User.Name}"></Label>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="EMAIL: "></Label>
+            <Label Text="{Binding User.Email}"></Label>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Label Text="COUNTRY: "></Label>
+            <Label Text="{Binding User.Country}"></Label>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
